@@ -11,3 +11,16 @@ function generatePin() {
         return generatePin();
     }
 }
+
+
+document.querySelector('.calc-body').addEventListener('click', (event) => {
+    const numInput = document.getElementById('typed-numbers');
+    const calc = event.target.innerText;
+    if (!isNaN(parseInt(calc))) {
+        numInput.value += event.target.innerText;
+    } else {
+        if (calc == 'C') {
+            numInput.value = '';
+        }
+    }
+})
