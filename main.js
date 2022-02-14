@@ -5,5 +5,9 @@ generateBtn.addEventListener('click', () => {
 
 function generatePin() {
     let randomNumber = Math.round(Math.random() * 10000);
-    document.getElementById('generated-pin').value = randomNumber;
+    if ((randomNumber + '').length == 4) {
+        document.getElementById('generated-pin').value = randomNumber;
+    } else {
+        return generatePin();
+    }
 }
