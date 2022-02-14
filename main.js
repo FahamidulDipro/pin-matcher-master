@@ -24,3 +24,15 @@ document.querySelector('.calc-body').addEventListener('click', (event) => {
         }
     }
 })
+
+document.querySelector('.submit-btn').addEventListener('click', () => {
+    const currentPin = document.getElementById('generated-pin').value;
+    const typedNum = document.getElementById('typed-numbers').value;
+    if (currentPin == typedNum) {
+        document.getElementById('notify-success').style.display = 'block';
+        document.getElementById('notify-failed').style.display = 'none';
+    } else {
+        document.getElementById('notify-failed').style.display = 'block';
+        document.getElementById('notify-success').style.display = 'none';
+    }
+})
